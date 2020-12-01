@@ -37,6 +37,12 @@
                     </div>
                 </div>
             </div>
+            <div class="w-100 text-center pt-2 back-arrow">
+                <form method="post" action="{{$item->id}}">
+                    @csrf
+                    <button class="border-0 back delete-btn" type="submit"><i class="fas fa-2x fa-trash"></i></button>
+                </form>
+            </div>
             <div onclick="document.location = '/dashboard'" class="w-100 text-center pt-2 back-arrow">
                 <i class="fas fa-4x fa-long-arrow-alt-left"></i>
             </div>

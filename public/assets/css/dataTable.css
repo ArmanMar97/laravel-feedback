@@ -16,6 +16,13 @@
     cursor: pointer;
 }
 
+.delete-btn{
+    background: none;
+}
+.delete-btn:focus{
+    border: none !important;
+    background: none !important;
+}
 
 .table tr:hover{
     cursor: pointer !important;

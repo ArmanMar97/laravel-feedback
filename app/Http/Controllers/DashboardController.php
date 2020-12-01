@@ -18,4 +18,9 @@ class DashboardController extends Controller
         return view('dashboardItem',['item'=>$item]);
     }
 
+    public function destroy($id){
+        Feedback::where('id',$id)->delete();
+        return redirect('/dashboard');
+    }
+
 }
