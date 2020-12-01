@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/',[\App\Http\Controllers\HomeController::class,'index']);
+Route::post('/',[\App\Http\Controllers\HomeController::class,'store']);
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Auth::routes();
+
+Route::get('/dashboard',[\App\Http\Controllers\DashboardController::class,'index'])->middleware('auth');
+Route::get('/dashboard/{id}',[\App\Http\Controllers\DashboardController::class,'show'])->middleware('auth');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
